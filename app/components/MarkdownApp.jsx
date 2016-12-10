@@ -1,4 +1,6 @@
 import React from 'react';
+import { markdown } from 'markdown';
+import createFragment from 'react-addons-create-fragment';
 
 /* eslint-disable */
 import Editor from 'Editor';
@@ -20,9 +22,10 @@ export default class MarkdownApp extends React.Component {
   }
 
   handleMarkdown() {
-    const text = this.state.text;
-    return text;
+    const html = markdown.toHTML(this.state.text, 'Gruber');
+    return { __html: html };
   }
+
   render() {
     return (
       <div className="container">

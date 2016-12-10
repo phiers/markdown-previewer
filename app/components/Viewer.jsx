@@ -6,7 +6,7 @@ export default class Viewer extends React.Component {
     return (
       <div className="viewer">
         <h2>Viewer</h2>
-        <p>{ this.props.markdown() }</p>
+        <div className="view-area" dangerouslySetInnerHTML={this.props.markdown()} />
       </div>
     );
   }
