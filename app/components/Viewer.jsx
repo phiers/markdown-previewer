@@ -4,8 +4,7 @@ import React from 'react';
 export default class Viewer extends React.Component {
   renderPage() {
     const text = this.props.markdown();
-    console.log(text);
-    if (text.__html === '') {
+    if (text.__html === '') { //eslint-disable-line
       return { __html: '<p class="placeholder">View results here...</p>' };
     }
     return text;
