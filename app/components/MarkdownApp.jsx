@@ -1,10 +1,10 @@
 import React from 'react';
 import { markdown } from 'markdown';
-import createFragment from 'react-addons-create-fragment';
 
 /* eslint-disable */
 import Editor from 'Editor';
 import Viewer from 'Viewer';
+import TitleBar from 'TitleBar';
 /* eslint-enable */
 
 export default class MarkdownApp extends React.Component {
@@ -29,12 +29,12 @@ export default class MarkdownApp extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>Markdown Previewer</h1>
+        <TitleBar />
         <div className="row">
-          <div className="small-6 large-5 columns">
+          <div className="small-6 large-6 columns">
             <Editor onEditing={this.handleEdits} />
           </div>
-          <div className="small-6 large-5 columns">
+          <div className="small-6 large-6 columns">
             <Viewer markdown={this.handleMarkdown} />
           </div>
         </div>

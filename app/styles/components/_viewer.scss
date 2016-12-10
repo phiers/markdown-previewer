@@ -1,7 +1,13 @@
 .viewer {
   .view-area {
     text-align: left;
-    background: blue;
-    min-height: 500px;
+    background: $text-background;
+    min-height: $height;
+    padding: 8px;
+
+    .placeholder {
+      color: lighten(gray, 10%);
+      font-size: 1rem;
+    }
   }
 }

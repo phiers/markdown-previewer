@@ -2,11 +2,18 @@ import React from 'react';
  // eslint-disable-line
 
 export default class Viewer extends React.Component {
+  renderPage() {
+    const text = this.props.markdown();
+    console.log(text);
+    if (text.__html === '') {
+      return { __html: '<p class="placeholder">View results here...</p>' };
+    }
+    return text;
+  }
   render() {
     return (
       <div className="viewer">
-        <h2>Viewer</h2>
-        <div className="view-area" dangerouslySetInnerHTML={this.props.markdown()} />
+        <div className="view-area" dangerouslySetInnerHTML={this.renderPage()} />
       </div>
     );
   }
