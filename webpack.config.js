@@ -22,9 +22,12 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    alias: { // set paths to files I'll be requiring
-      Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx',
+    modulesDirectories: [
+      'node_modules',
+      './app/components',
+      './app/api',
+    ],
+    alias: {
       applicationStyles: 'app/styles/app.scss',
     },
     extensions: ['', '.js', '.jsx'],
