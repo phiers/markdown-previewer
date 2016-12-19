@@ -24,7 +24,6 @@ export default class MarkdownApp extends React.Component {
   handleMarkdown() {
     const html = marked(this.state.text);
     console.log(html);
-    // const html = markdown.toHTML(this.state.text, 'Gruber');
     return { __html: html };
   }
 
